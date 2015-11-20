@@ -1,3 +1,5 @@
+package utils;
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
