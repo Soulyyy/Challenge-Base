@@ -1,0 +1,21 @@
+//
+   Created by AlWilliam on 7/24/2015.
+//- Start regfield mixins
+mixin text_form(inputName,valueName,inputType, placeholderText, icon)
+  div.input-group
+    if inputName
+      label(for="Insert " + inputName)=inputName
+    if icon
+      span.input-group-addon
+        span(class=icon)
+    input(type=inputType,class="form-control",id=valueName,placeholder=placeholderText,name =valueName)&attributes(attributes)
+    //if helpText
+      p.help-block=helpText
+mixin text_form_no_ico(inputName,valueName,inputType, placeholderText)
+  div.form-group
+    if inputName
+      label(for="Insert " + inputName)=inputName
+
+    input(type=inputType,class="form-control",id=valueName,placeholder=placeholderText,name =valueName)&attributes(attributes)
+    //if helpText
+      p.help-block=helpText

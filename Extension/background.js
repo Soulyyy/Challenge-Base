@@ -1,4 +1,5 @@
 var blacklist;
+var key = 42;
 chrome.storage.sync.get("blacklist", function (ret) {
   if (!ret.blacklist) {
     blacklist = [

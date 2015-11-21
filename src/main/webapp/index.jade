@@ -1,27 +1,88 @@
-doctype html
-head
-  meta(charset="utf-8")
-  title Something something
-  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous")
-  link(rel="stylesheet" href="css/style.css")
-body
-  nav.navbar.navbar-inverse.navbar-fixed-top
-    .container
-      .navbar-header
-        a.navbar-brand(href="#") Project name
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav
-          li.active
-            a(href="#") Home
-          li
-            a(href="#") About
-          li
-            a(href="#") Contact
-  .container
-    .template
-      h1 Ayy lmao
-      .lead Doot doot
+include mixins
+extends layout
+block body
+  //.landing-nav
+    .container(style="{position:relative}")
+      .landing-nav-title.col-xs-6
+        span
+          img.validare-icon(src="/img/validare-icon.svg")
+        b Validare
+        span.superscript
+          b alpha
+      .col-xs-6.landing-nav-btn-group
+        .pull-right
+          button.btn
+            b Log in
+          button.btn.btn-highlight
+            b Sign up
+          //button.btn.btn-highlight Go to app
+  .bg
+    .container(style="{position:relative}")
+      .action-content
+        b Responsibility is hard to teach.
+        p On the internet, we can do it for you.
+        button.btn.btn-success
+          b Download for Chrome
 
-  script(src="https://code.jquery.com/jquery-2.1.4.min.js")
-  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous")
-  script(src="js/script.js")
+  .intro-title
+    .container
+  .content-1.scroll-content
+    .container
+      .row
+        .col-lg-12
+          .feature-title
+            h1 Turn your kids bad habits into charity
+
+        //.col-md-4
+          .feature
+            h1
+              span.glyphicon.glyphicon-equalizer
+            h5
+              span Synced data
+            p Multiple users can use your prototype at the same time. And when you come back, all the data is still there.
+        //.col-md-4
+          .feature
+            h1
+              span.glyphicon.glyphicon-ok
+            h5 Better validation
+            p Users get that "real app feeling" if data isn't reset every time they come back. You get better, long term validation.
+        //.col-md-4
+          .feature
+            h1
+              span.glyphicon.glyphicon-send
+            h5 It's alive!
+            p With Validare, your prototypes get a new lease on life. Share them with everyone in a way it's actually useful.
+        //.col-lg-12
+          .feature-title
+            h1 How it works
+        //.col-md-12
+          .feature
+            ol
+              li Build your prototype in JustInMind.
+              li Export your file File -> Export to HTML or simply F7
+              li Zip the whole target folder.
+              li Upload the fresh zip file.
+              li Share it with all your friends!
+            //
+              p Datamasters of the same prototype are kept in sync. This allows multiple users to access the same data at the same time. This means you can build chatrooms, synced to-do lists etc. This also means that for the data sync to work, you have to store everything in datamasters.
+              p Information put into the Datamasters in JIM will be present in every instance created. So if you want them all to have some default data, add it to the initial prototype.
+              p Different prototypes have separate information, so if you want to upload the same prototype with different data, just make a new prototype.
+              p There are a few specific commands that you can use:
+              p Create an input field. As it’s name, type:
+              p ‘service-time-interval-x’ to trigger on Change events of the input field every x milliseconds. For example ‘service-time-interval-1000’ will make the on Change events trigger every second.
+              p ‘service-datamaster-change’ to change the value of the field every time a datamaster changes to the datamaster name that was changed and trigger on Change event of the input field itself.
+  footer.lp
+    .container
+      .col-md-4
+        | This is an early alpha project by Waystone.
+        br
+        br
+      .col-md-4
+        | Knowledge base will be released soon
+        br
+        br
+      .col-md-4
+        | Contact us: hello@waystone.io
+        br
+  // Nav
+

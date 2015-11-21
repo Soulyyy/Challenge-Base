@@ -1,0 +1,202 @@
+/* app css stylesheet */
+/*@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Bebas Neue'), url('../fonts/BebasNeue.woff') format('woff');
+}*/
+/* SIGN UP MODAL CSS*/
+.modal-content {
+  background-color: #ECF0F1; }
+  .modal-content .form-group {
+    margin-bottom: 5px; }
+  .modal-content .input-group {
+    margin-bottom: 5px; }
+  .modal-content .well, .modal-content .form-control {
+    border: solid 1px #bdc3c7;
+    background-color: white; }
+
+.btn-google {
+  background-color: #d34c3d;
+  color: #ECF0F1; }
+  .btn-google:hover {
+    background-color: #e25747; }
+
+.google-icon {
+  width: 1.5em;
+  margin-right: 10px;
+  position: relative;
+  bottom: 2px; }
+
+.validare-icon {
+  width: 1.3em;
+  margin-right: 5px;
+  position: relative;
+  bottom: 2px; }
+
+/*Praised be Chris Coyier*/
+.fancy {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  line-height: 0.5;
+  text-align: center; }
+  .fancy span {
+    display: inline-block;
+    position: relative; }
+  .fancy span:before, .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 7px;
+    border-bottom: 1px solid #bdc3c7;
+    top: 0;
+    width: 180px; }
+  .fancy span:before {
+    right: 100%;
+    margin-right: 15px; }
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px; }
+
+/* LANDING PAGE CSS */
+/* Landing nav*/
+.landing-nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 50px;
+  background-color: #ecf0f1;
+  width: 100%; }
+
+.landing-nav-title {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  color: #2C3E50;
+  font-size: 25px; }
+  .landing-nav-title .superscript {
+    font-size: 12px;
+    position: absolute;
+    top: 5px; }
+
+.landing-nav-btn-group {
+  position: relative;
+  top: 7px;
+  color: #2C3E50; }
+  .landing-nav-btn-group .btn {
+    color: #2C3E50;
+    padding: 4px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 3px;
+    margin-right: 3px; }
+    .landing-nav-btn-group .btn:hover {
+      background-color: transparent;
+      border-radius: 0;
+      color: #1EE26D; }
+    .landing-nav-btn-group .btn.btn-highlight {
+      border: solid #27AE60 3px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      color: #27AE60; }
+      .landing-nav-btn-group .btn.btn-highlight:hover {
+        color: #1EE26D;
+        border: solid #1EE26D 3px; }
+
+/* Landing page content */
+.bg {
+  min-height: 800px;
+  width: 100%;
+  background: url("/img/landingbackground.jpg") no-repeat center 80%;
+  background-size: cover; }
+
+.action-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  color: #2C3E50;
+  text-align: center;
+  width: 50%;
+  vertical-align: middle;
+  height: inherit;
+  margin: 550px 300px 0px;
+  padding-bottom: 20px; }
+  .action-content b {
+    font-size: 35px;
+    /**font-family: 'Bebas Neue';**/ }
+  .action-content p {
+    font-size: 25px; }
+  .action-content button.btn.btn-lg {
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: solid #19703e 3px;
+    background-color: #27AE60;
+    color: #ECF0F1;
+    margin-top: 20px;
+    -webkit-transition: border .25s ease-in-out, color .25s ease-in-out, background-color .25s ease-in-out, padding .25s ease-in-out;
+    transition: border .25s ease-in-out, color .25s ease-in-out, background-color .25s ease-in-out, padding .25s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased; }
+    .action-content button.btn.btn-lg:hover {
+      box-sizing: border-box;
+      border-bottom: solid #19703e 5px;
+      padding-bottom: 8px;
+      background-color: #1EE26D;
+      color: #ECF0F1; }
+
+.feature-title {
+  box-sizing: border-box;
+  background-color: #ECF0F1;
+  color: #2C3E50;
+  padding: 5px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .15s;
+  -webkit-transition-property: padding, border, color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: .15s;
+  transition-property: padding, border, color, background-color, margin;
+  cursor: pointer; }
+  .feature-title > h1 {
+    font-size: 55px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle; }
+
+.feature {
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  color: #2C3E50;
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: solid #bdc3c7 3px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .feature > h1 {
+    margin-top: 8px;
+    text-align: center;
+    vertical-align: middle; }
+  .feature > h5 {
+    text-align: center;
+    vertical-align: middle; }
+
+.scroll-content {
+  border-top: solid #507192 2px;
+  padding: 25px;
+  background-color: #ECF0F1; }
+
+footer.lp {
+  border-top: solid #2C3E50 10px;
+  padding: 25px;
+  background-color: #1a242f;
+  color: #ECF0F1; }
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .action-content {
+    padding: 100px 25px 25px; } }
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .action-content {
+    padding: 100px 25px 25px; } }
+
+/*# sourceMappingURL=app.css.map */

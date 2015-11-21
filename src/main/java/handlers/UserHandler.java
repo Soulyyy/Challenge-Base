@@ -27,7 +27,7 @@ public class UserHandler {
 
   //TODO implement database side, may leak connections atm
   public static UserObject getUser(String key) {
-    LOGGER.info("Getting user with key {}");
+    LOGGER.info("Getting user with key {}", key);
     MongoDatabase database = MongoConnection.getDatabase();
     MongoCollection<Document> collection = database.getCollection("users");
     BasicDBObject dbObject = new BasicDBObject("key", key);

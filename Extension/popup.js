@@ -1,3 +1,4 @@
+var key = 42;
 function populate() {
   chrome.runtime.getBackgroundPage(function (bgPage) {
     $(".sites tr").remove();
@@ -9,6 +10,10 @@ function populate() {
       remove($(this).data("id"));
     });
   });
+  $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
+    console.log(data);
+    $(".balance").text(data.balance + "€");
+  })
 }
 populate();
 

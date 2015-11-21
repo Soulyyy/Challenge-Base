@@ -1,0 +1,270 @@
+/* app css stylesheet */
+
+//Color definitions
+$color-light: #ECF0F1;
+$color-light-dark: darken($color-light, 30%);
+$color-dark: #2C3E50;
+$color-dark-light: lighten(#0a212f, 10%);
+$color-input-bg: #bdc3c7;
+$color-separator: $color-input-bg;
+$color-google: #d34c3d;
+$color-highlight: #1ABC9C;
+$color-highlight-light: lighten(#1ABC9C, 10%);
+$color-panel-bg: #2980B9;
+$color-landing-content-bg: #2C3E50;
+$cta-btn-bg: #27AE60;
+$color-validare-green: #1EE26D;
+$color-landing-feature-bg: #FFFFFF;
+
+
+
+/*@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Bebas Neue'), url('../fonts/BebasNeue.woff') format('woff');
+}*/
+
+/* SIGN UP MODAL CSS*/
+.modal-content {
+  background-color: $color-light;
+  .form-group {
+    margin-bottom: 5px;
+  }
+  .input-group {
+    margin-bottom: 5px;
+  }
+  .well, .form-control {
+    border: solid 1px $color-input-bg;
+    background-color: white;
+  }
+}
+
+.btn-google {
+  background-color: $color-google;
+  color: $color-light;
+  &:hover {
+    background-color: saturate(lighten($color-google, 5%), 10%);
+  }
+}
+
+.google-icon {
+  width: 1.5em;
+  margin-right: 10px;
+  position: relative;
+  bottom: 2px;
+}
+
+.validare-icon {
+  width: 1.3em;
+  margin-right: 5px;
+  position: relative;
+  bottom: 2px;
+}
+
+/*Praised be Chris Coyier*/
+.fancy {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  line-height: 0.5;
+  text-align: center;
+  span {
+    display: inline-block;
+    position: relative;
+  }
+  span:before, span:after {
+    content: "";
+    position: absolute;
+    height: 7px;
+    border-bottom: 1px solid $color-separator;
+    top: 0;
+    width: 180px;
+  }
+  span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+}
+
+/* LANDING PAGE CSS */
+
+/* Landing nav*/
+
+.landing-nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 50px;
+  background-color: rgba($color-light,1);
+  width: 100%;
+
+}
+
+.landing-nav-title {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  color: $color-dark;
+  font-size: 25px;
+  .superscript {
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+  }
+}
+
+.landing-nav-btn-group {
+  position: relative;
+  top: 7px;
+  color: $color-dark;
+  .btn {
+    color: $color-dark;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 0;
+      color: $color-validare-green;
+    }
+    &.btn-highlight {
+      border: solid  $cta-btn-bg 3px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      color: $cta-btn-bg;
+      &:hover {
+        color: $color-validare-green;
+        border: solid  $color-validare-green 3px;
+      }
+    }
+  }
+}
+
+/* Landing page content */
+
+.bg {
+  min-height: 800px;
+  width: 100%;
+  background: url("/img/landingbackground.jpg") no-repeat center 80%;
+  background-size: cover;
+}
+
+.action-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  color: $color-dark;
+  text-align: center;
+  width: 50%;
+  vertical-align: middle;
+  height: inherit;
+  margin: 550px 300px 0px;
+  padding-bottom: 20px;
+  b {
+    font-size: 35px;
+    /**font-family: 'Bebas Neue';**/
+  }
+  p {
+    font-size: 25px;
+  }
+  button.btn.btn-lg {
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: solid darken($cta-btn-bg, 15%) 3px;
+    background-color: $cta-btn-bg;
+    color: $color-light;
+    margin-top: 20px;
+    -webkit-transition: border .25s ease-in-out, color .25s ease-in-out, background-color .25s ease-in-out, padding .25s ease-in-out;
+    transition: border .25s ease-in-out, color .25s ease-in-out, background-color .25s ease-in-out, padding .25s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    &:hover {
+      box-sizing: border-box;
+      border-bottom: solid darken($cta-btn-bg, 15%) 5px;
+      padding-bottom: 8px;
+      background-color: $color-validare-green;
+      color: $color-light;
+    }
+  }
+}
+
+.feature-title {
+  box-sizing: border-box;
+  background-color: $color-light;
+  color: $color-dark;
+  padding: 5px;
+  border-radius: 2px;
+  //border-bottom: solid #bdc3c7 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .15s;
+  -webkit-transition-property: padding, border, color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: .15s;
+  transition-property: padding, border, color, background-color, margin;
+  cursor: pointer;
+  & > h1 {
+    font-size: 55px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  //&:hover {
+  //border-bottom: solid #194d70 5px;
+  //padding-bottom: 3px;
+  //background-color: #2c8ac8;
+  //color: #f2f6f7;
+  //}
+}
+
+.feature {
+  box-sizing: border-box;
+  background-color: $color-landing-feature-bg;
+  color: $color-landing-content-bg;
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: solid #bdc3c7 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  & > h1 {
+    margin-top: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  & > h5 {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.scroll-content {
+  border-top: solid lighten($color-landing-content-bg,20%) 2px;
+  padding: 25px;
+  background-color: #ECF0F1;
+}
+
+footer.lp {
+  border-top: solid $color-dark 10px;
+  padding: 25px;
+  background-color: darken($color-dark, 10%);
+  color: $color-light;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .action-content {
+    padding: 100px 25px 25px;
+  }
+}
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .action-content {
+    padding: 100px 25px 25px;
+  }
+}
