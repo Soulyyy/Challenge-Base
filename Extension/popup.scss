@@ -32,7 +32,11 @@ body {
 }
 
 .center {
-  text-align: center
+  text-align: center;
+  p{
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
 }
 
 .highlight{
@@ -47,4 +51,9 @@ body {
 
 .form-control {
   height: auto;
+}
+
+.btn-block{
+  margin-top: 10px;
+  width: 200px;
 }

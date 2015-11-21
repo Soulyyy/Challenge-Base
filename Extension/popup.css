@@ -28,6 +28,9 @@ body {
 
 .center {
   text-align: center; }
+  .center p {
+    margin-top: 6px;
+    margin-bottom: 6px; }
 
 .highlight {
   color: #16A085; }
@@ -39,7 +42,10 @@ body {
   margin: 0; }
 
 .form-control {
-  height: auto;
-}
+  height: auto; }
+
+.btn-block {
+  margin-top: 10px;
+  width: 200px; }
 
 /*# sourceMappingURL=popup.css.map */

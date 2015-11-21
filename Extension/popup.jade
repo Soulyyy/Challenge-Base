@@ -5,19 +5,25 @@ head
   link(rel="stylesheet" href="popup.css")
 body
   #page1(style="display:none")
-    | E-Mail
-    input.form-control(type="text")
+    .center
+      p Welcome to Responsible!
+      p Let's get you set up.
+      p.highlight Enter your e-mail
+    input.form-control(placeholder="ex: john@gmail.com" type="text")
     br
-    button#topage2.btn Next
+    button.btn.btn-primary.btn-block#topage2 Next
   #page2(style="display:none")
-    table.center.sites2
+    .center
+      p.highlight Add webpages you
+      p.highlight want to discourage.
+      table.center.sites2
     input.form-control#newPage(type="text")
-    button.btn#addBtn(value="Add") Add
-    button.btn#topage3(value="Add") Done
+    button.btn.btn-block#addBtn(value="Add") Add
+    button.btn.btn-primary.btn-block#topage3(value="Add") Done
   #page3(style="display:none")
-    .title.center Current balance
+    .title.center Current allowance
     .balance.center Loading
-    .title.center Blacklisted sites
+    .title.center Watchlist
     table.center.sites3
   script(src="jquery.js")
   script(src="popup.js")
