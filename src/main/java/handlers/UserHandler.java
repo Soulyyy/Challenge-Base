@@ -33,7 +33,7 @@ public class UserHandler {
     BasicDBObject dbObject = new BasicDBObject("key", key);
     final List<UserObject> users = new ArrayList<>();
     Block<Document> mapToUsers = document -> users.add(new UserObject(document.getString("name"), document.getString("email"), document.getString("password"),
-        new BigDecimal(document.getDouble("commitment")), new BigDecimal(document.getDouble("balance")), document.getString("key")));
+        new BigDecimal(document.getDouble("commitment")), new BigDecimal(document.getDouble("balance"))));
     collection.find(dbObject).forEach(mapToUsers);
     if (users.size() == 0 || users.size() > 1) {
       LOGGER.warn("Database has {} mappings to the same key {}", users.size(), key);
@@ -50,7 +50,7 @@ public class UserHandler {
     MongoDatabase database = MongoConnection.getDatabase();
     MongoCollection<Document> collection = database.getCollection("users");
     //Ghetto mapping
-    collection.updateOne(Filters.eq("key", userObject.getKey()), new Document("$set", new Document("balance", userObject.getBalance().doubleValue())));
+    collection.updateOne(Filters.eq("email", userObject.getEmail()), new Document("$set", new Document("balance", userObject.getBalance().doubleValue())));
     //collection.updateOne(query, change);
     LOGGER.info("Updated object to {}", userObject);
 
@@ -77,7 +77,7 @@ public class UserHandler {
     MongoCollection<Document> collection = database.getCollection("users");
     Document document = new Document().append("name", userObject.getUsername()).append("email", userObject.getEmail())
         .append("password", userObject.getPassword()).append("commitment", userObject.getCommitment().doubleValue())
-        .append("balance", userObject.getBalance().doubleValue()).append("key", userObject.getKey());
+        .append("balance", userObject.getBalance().doubleValue());
     collection.insertOne(document);
     LOGGER.info("User added: {}!", userObject);
   }

@@ -21,7 +21,7 @@ public class RegistrationController {
   public void registerUser(@QueryParam("name") String username, @QueryParam("email") String email, @QueryParam("password") String password) {
     LOGGER.info("Registering user with name {}, email {} and password {}", username, email, password);
     if (!UserHandler.isEmailUsed(email)) {
-      UserObject userObject = new UserObject(username, email, password, "irrelephant");
+      UserObject userObject = new UserObject(username, email, password);
       UserHandler.addUser(userObject);
     }
   }
