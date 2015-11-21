@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Give money app",
+  "description": "We take your money",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "notifications"
+  ]
+}
