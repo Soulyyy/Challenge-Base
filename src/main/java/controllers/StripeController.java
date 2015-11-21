@@ -6,6 +6,7 @@ import com.stripe.model.Charge;
 import objects.PaymentObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.Cache;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -26,8 +27,8 @@ public class StripeController {
   public PaymentObject makePayment(@QueryParam("name") String name, @QueryParam("token") String token) throws CardException, APIException, AuthenticationException, InvalidRequestException, APIConnectionException {
     LOGGER.info("User with name : {} and token: {} requesting", name, token);
 
-    //TODO Test key, load these from props
-    Stripe.apiKey = "tGN0bIwXnHdwOa85VABjPdSn8nWY7G7I";
+    LOGGER.info("Current Stripe api key is {}", Cache.token);
+    Stripe.apiKey = Cache.token;
 
     final Map<String, Object> cardParams = new HashMap<>();
     cardParams.put("number", "4242424242424242");
