@@ -5,16 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Hans on 16/11/2015.
+ * Created by hans on 21.11.15.
  */
 @AllArgsConstructor
-public class MongoObject {
+public class ResponseObject {
 
   @Getter
   @Setter
-  private String name;
+  private String message;
 
-  @Getter
-  @Setter
-  private int age;
 }

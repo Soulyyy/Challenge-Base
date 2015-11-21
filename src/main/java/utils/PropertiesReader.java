@@ -15,14 +15,8 @@ public class PropertiesReader {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PropertiesReader.class);
 
-  public static void main(String[] args) throws IOException {
+  public static void readProps() throws IOException {
 
-    readProps();
-  }
-
-  public static String readProps() throws IOException {
-
-    String resp = "";
     Properties properties = new Properties();
     String filename = "props.properties";
 
@@ -41,7 +35,6 @@ public class PropertiesReader {
     } catch (IOException e) {
       throw e;
     }
-    return resp;
   }
 
 }

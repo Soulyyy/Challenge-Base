@@ -1,9 +1,7 @@
 package utils;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
-import controllers.BasicJsonController;
-import controllers.BasicMongoController;
-import controllers.StripeController;
+import controllers.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,6 +27,8 @@ public class ApplicationMain extends Application {
     classes.add(BasicJsonController.class);
     classes.add(BasicMongoController.class);
     classes.add(StripeController.class);
+    classes.add(ActionController.class);
+    classes.add(BalanceController.class);
     //This class gives us JSON bindings by Jackson
     classes.add(JacksonJsonProvider.class);
     try {

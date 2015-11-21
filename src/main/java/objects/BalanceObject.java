@@ -5,16 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Hans on 16/11/2015.
+ * Created by hans on 21.11.15.
  */
 @AllArgsConstructor
-public class MongoObject {
+public class BalanceObject {
 
   @Getter
   @Setter
-  private String name;
-
-  @Getter
-  @Setter
-  private int age;
+  private double balance;
 }
