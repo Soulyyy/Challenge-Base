@@ -30,6 +30,8 @@ public class ApplicationMain extends Application {
     classes.add(ActionController.class);
     classes.add(BalanceController.class);
     classes.add(RegistrationController.class);
+    classes.add(CreditCardRegisterController.class);
+    classes.add(PaymentController.class);
     //This class gives us JSON bindings by Jackson
     classes.add(JacksonJsonProvider.class);
     try {

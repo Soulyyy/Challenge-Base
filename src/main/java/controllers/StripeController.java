@@ -35,13 +35,7 @@ public class StripeController {
     cardParams.put("exp_month", 12);
     cardParams.put("exp_year", 2015);
     cardParams.put("cvc", "123");
-    cardParams.put("name", "J Bindings Cardholder");
-    cardParams.put("address_line1", "140 2nd Street");
-    cardParams.put("address_line2", "4th Floor");
-    cardParams.put("address_city", "San Francisco");
-    cardParams.put("address_zip", "94105");
-    cardParams.put("address_state", "CA");
-    cardParams.put("address_country", "USA");
+    cardParams.put("name", "J Bindings Cardholder");;
 
     final Map<String, Object> chargeParams = new HashMap<>();
     chargeParams.put("amount", 100);
