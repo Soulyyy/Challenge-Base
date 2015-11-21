@@ -14,17 +14,15 @@ chrome.storage.sync.get("blacklist", function (ret) {
 });
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (changeInfo.status != "complete") return;
-  checkBlacklist(tab.url);
+  checkBlacklist();
 });
 
 chrome.tabs.onCreated.addListener(function (tab) {
-  checkBlacklist(tab.url);
+  checkBlacklist();
 });
 chrome.tabs.onActivated.addListener(function (activeInfo) {
   chrome.tabs.get(activeInfo.tabId, function (tab) {
-    if (!checkBlacklist(tab.url)) {
-      chrome.notifications.clear("blacklisted_visiting");
-    }
+    checkBlacklist();
   });
 });
 
@@ -48,21 +46,23 @@ function updateBalance(site, cb) {
   });
 }
 var tid;
-var timeout;
-function checkBlacklist(url) {
-  if (!url) return;
-  for (var i = 0; i < blacklist.length; i++) {
-    var site = blacklist[i];
-    if (url.indexOf(site) === -1) continue;
-    tid = setInterval(function () {
-      updateBalance(site);
-    }, 2000);
-    console.log("Visiting blacklisted site: " + url);
-    visiting = true;
-    return true;
-  }
-  visiting = false;
-  if (tid) clearInterval(tid);
-  if (timeout) clearTimeout(timeout);
-  return false;
+function checkBlacklist() {
+  chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+    var tab = tabs[0];
+    var url = tab.url;
+    for (var i = 0; i < blacklist.length; i++) {
+      var site = blacklist[i];
+      if (url.indexOf(site) === -1) continue;
+      if (tid) clearInterval(tid);
+      tid = setInterval(function () {
+        updateBalance(site);
+      }, 2000);
+      console.log("Visiting blacklisted site: " + url);
+      visiting = true;
+      return;
+    }
+    visiting = false;
+    if (tid) clearInterval(tid);
+    chrome.notifications.clear("blacklisted_visiting");
+  });
 }

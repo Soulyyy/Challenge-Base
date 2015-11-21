@@ -64,7 +64,7 @@
   z-index: 1;
   top: 0;
   height: 50px;
-  background-color: #ecf0f1;
+  background-color: rgba(255, 255, 255, 0.9);
   width: 100%; }
 
 .landing-nav-title {
@@ -108,6 +108,7 @@
   min-height: 100%;
   height: 100%;
   width: 100%;
+  position: fixed;
   background: url("/img/landingbackground.jpg") no-repeat center center fixed;
   background-size: cover; }
 
