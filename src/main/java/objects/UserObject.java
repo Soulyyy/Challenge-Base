@@ -40,4 +40,14 @@ public class UserObject {
   @Setter
   private String key;
 
+  //Constructor for registration
+  public UserObject(String username, String email, String password, String key) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.commitment = new BigDecimal(0.1);
+    this.balance = new BigDecimal(1.0);
+    this.key = key;
+  }
+
 }
