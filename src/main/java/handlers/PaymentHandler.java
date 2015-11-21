@@ -20,7 +20,7 @@ public class PaymentHandler {
   private static final Logger LOGGER = LoggerFactory.getLogger(PaymentHandler.class);
 
   public static PaymentObject makePayment(UserObject userObject, Map<String, Object> cardMap) {
-    //TODO add it as a parameter
+
     String status = "No payment made yet";
     UserHandler.updateBalance(userObject);
     if (userObject.getBalance().doubleValue() < -5.0) {
@@ -30,20 +30,21 @@ public class PaymentHandler {
       Stripe.apiKey = Cache.token;
 
       final Map<String, Object> chargeParams = new HashMap<>();
-      chargeParams.put("amount", userObject.getBalance().doubleValue() * -1.0);
+      chargeParams.put("amount", (int)(Math.round(userObject.getBalance().doubleValue() * -100.0)));
       chargeParams.put("currency", "usd");
       chargeParams.put("card", cardMap);
 
-      final Charge charge;
       try {
-        charge = Charge.create(chargeParams);
+        Charge charge = Charge.create(chargeParams);
         status = charge.getStatus();
+        LOGGER.info("Charged!");
+        CharityHandler.updateCharityBalance(CharityHandler.getCharity("Somalia"), userObject.getBalance().doubleValue() * -1.0);
+        UserHandler.updateBalance(userObject, 0.0);
       } catch (AuthenticationException | InvalidRequestException | APIConnectionException | CardException | APIException e) {
         LOGGER.info("Payment failed with chargeparams {}", chargeParams);
         status = "failure";
         e.printStackTrace();
       }
-      UserHandler.updateBalance(userObject, 0.0);
     }
     String message = CharityHandler.getCharity("Somalia").getMessage();
     return new PaymentObject(userObject.getUsername(), message, status);

@@ -41,6 +41,7 @@ public class StripeController {
     chargeParams.put("amount", 100);
     chargeParams.put("currency", "usd");
     chargeParams.put("card", cardParams);
+    LOGGER.info("Card parameters are {}", chargeParams);
 
     final Charge charge = Charge.create(chargeParams);
     LOGGER.info(charge.toString());

@@ -3,6 +3,8 @@ package objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +14,8 @@ import java.util.Map;
  */
 @AllArgsConstructor
 public class CreditCardObject {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(CreditCardObject.class);
 
   @Getter
   @Setter
@@ -40,12 +44,13 @@ public class CreditCardObject {
 
 
   public Map<String, Object> getCreditCardMap() {
+    LOGGER.info("Name {}", name);
     Map<String, Object> cardParams = new HashMap<>();
-    cardParams.put("number", number);
+    cardParams.put("number", number.replace("\"", ""));
     cardParams.put("exp_month", expMonth);
     cardParams.put("exp_year", expYear);
-    cardParams.put("cvc", cvc);
-    cardParams.put("name", name);
+    cardParams.put("cvc", cvc.replace("\"", ""));
+    cardParams.put("name", name.replace("\"", ""));
     return cardParams;
   }
 
