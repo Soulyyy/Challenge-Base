@@ -1,7 +1,15 @@
-var blacklist = [
-  "facebook.com",
-  "buzzfeed.com"
-];
+var blacklist;
+chrome.storage.sync.get("blacklist", function (ret) {
+  if (!ret.blacklist) {
+    blacklist = [
+      "facebook.com",
+      "buzzfeed.com"
+    ];
+    chrome.storage.sync.set({blacklist: blacklist});
+    return;
+  }
+  blacklist = ret.blacklist;
+});
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (changeInfo.status != "complete") return;
   checkBlacklist(tab.url);
@@ -17,6 +25,10 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
     }
   });
 });
+
+function updated() {
+  chrome.storage.sync.set({blacklist: blacklist});
+}
 
 function checkBlacklist(url) {
   if (!url) return;

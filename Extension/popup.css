@@ -1,10 +1,29 @@
 body {
-    width: 250px;
+  width: 300px;
 }
 
 .title {
-    color: red;
-    font-size: 15pt;
+  color: black;
+  font-weight: bold;
+  font-size: 16pt;
+  margin-bottom: 10px;
+}
+
+.balance {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 20pt;
+}
+
+.remove {
+  font-weight: bold;
+  text-decoration: none;
+  color: red;
+  text-align: right;
+}
+
+.sites {
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=popup.css.map */
