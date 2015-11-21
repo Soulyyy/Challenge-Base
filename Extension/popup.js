@@ -1,4 +1,4 @@
-var key = 42;
+var key = encodeURIComponent("tmpemail@gmail.com");
 function populate() {
   chrome.runtime.getBackgroundPage(function (bgPage) {
     $(".sites2 tr, .sites3 tr").remove();
