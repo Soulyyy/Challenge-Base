@@ -1,15 +1,20 @@
 package objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Created by Hans on 16/11/2015.
  */
+@AllArgsConstructor
 public class MongoObject {
 
-  public int age;
-  public String name;
+  @Getter
+  @Setter
+  private String name;
 
-  public MongoObject(String name, int age) {
-    this.age = age;
-    this.name = name;
-  }
+  @Getter
+  @Setter
+  private int age;
 }

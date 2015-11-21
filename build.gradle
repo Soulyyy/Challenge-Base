@@ -22,6 +22,7 @@ dependencies {
     compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.22.1'
 
     compile 'org.mongodb:mongo-java-driver:3.1.1'
+    compile 'org.mongodb.morphia:morphia:1.0.1'
 
     compile 'com.stripe:stripe-java:1.38.0'
 

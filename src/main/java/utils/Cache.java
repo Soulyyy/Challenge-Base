@@ -5,6 +5,6 @@ package utils;
  */
 public class Cache {
 
-  static String dbname;
+  public static String dbname;
   public static String token;
 }
