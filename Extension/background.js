@@ -48,7 +48,6 @@ function updateBalance(site, cb) {
   });
 }
 var tid;
-var timeout;
 function checkBlacklist(url) {
   if (!url) return;
   for (var i = 0; i < blacklist.length; i++) {
@@ -63,6 +62,5 @@ function checkBlacklist(url) {
   }
   visiting = false;
   if (tid) clearInterval(tid);
-  if (timeout) clearTimeout(timeout);
   return false;
 }
