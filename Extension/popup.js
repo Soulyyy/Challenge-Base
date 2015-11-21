@@ -10,10 +10,7 @@ function populate() {
       remove($(this).data("id"));
     });
   });
-  $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
-    console.log(data);
-    $(".balance").text(data.balance + "€");
-  })
+  updateBalance();
 }
 populate();
 
@@ -43,3 +40,10 @@ function remove(id) {
     populate();
   });
 }
+
+function updateBalance() {
+  $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
+    $(".balance").text(data.balance.toFixed(2) + "€");
+  });
+}
+setInterval(updateBalance, 2000);
