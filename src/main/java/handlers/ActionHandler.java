@@ -36,7 +36,7 @@ public class ActionHandler {
     //We reduce balance by commitment amount, may need more engineering and cats here
     LOGGER.info("Handling blacklist with user object: {}", userObject);
     userObject.setBalance(userObject.getBalance().subtract(userObject.getCommitment()));
-    UserHandler.updateUser(userObject);
+    UserHandler.updateBalance(userObject);
 
   }
 }

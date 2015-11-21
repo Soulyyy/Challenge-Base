@@ -35,7 +35,7 @@ public class StripeController {
     cardParams.put("exp_month", 12);
     cardParams.put("exp_year", 2015);
     cardParams.put("cvc", "123");
-    cardParams.put("name", "J Bindings Cardholder");;
+    cardParams.put("name", "J Bindings Cardholder");
 
     final Map<String, Object> chargeParams = new HashMap<>();
     chargeParams.put("amount", 100);
@@ -45,9 +45,7 @@ public class StripeController {
     final Charge charge = Charge.create(chargeParams);
     LOGGER.info(charge.toString());
 
-
-    PaymentObject paymentObject = new PaymentObject(name, token);
-    return paymentObject;
+    return new PaymentObject(name, token, charge.getStatus());
   }
 
 
