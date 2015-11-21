@@ -22,12 +22,15 @@ body {
   color: #E74C3C;
   text-align: right; }
 
-.sites {
+.sites2, .sites3 {
   margin: auto;
   color: #2C3E50; }
 
 .center {
   text-align: center; }
+  .center p {
+    margin-top: 6px;
+    margin-bottom: 6px; }
 
 .highlight {
   color: #16A085; }
@@ -37,5 +40,12 @@ body {
 
 .breaker {
   margin: 0; }
+
+.form-control {
+  height: auto; }
+
+.btn-block {
+  margin-top: 10px;
+  width: 200px; }
 
 /*# sourceMappingURL=popup.css.map */

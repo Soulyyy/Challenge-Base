@@ -26,13 +26,17 @@ body {
   text-align: right;
 }
 
-.sites {
+.sites2, .sites3 {
   margin: auto;
   color: #2C3E50;
 }
 
 .center {
-  text-align: center
+  text-align: center;
+  p{
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
 }
 
 .highlight{
@@ -43,4 +47,13 @@ body {
 }
 .breaker{
   margin: 0;
+}
+
+.form-control {
+  height: auto;
+}
+
+.btn-block{
+  margin-top: 10px;
+  width: 200px;
 }

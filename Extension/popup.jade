@@ -4,17 +4,26 @@ head
   link(rel="stylesheet" href="flat-ui.css")
   link(rel="stylesheet" href="popup.css")
 body
-  //.logo.center
-    span.highlight
-      b R
-  .title.center Current balance
-  .balance.center Loading
-  .title.center Blacklisted sites
-  table.center.sites
-  //.newItem.input-group
+  #page1(style="display:none")
+    .center
+      p Welcome to Responsible!
+      p Let's get you set up.
+      p.highlight Enter your e-mail
+    input.form-control(placeholder="ex: john@gmail.com" type="text")
+    br
+    button.btn.btn-primary.btn-block#topage2 Next
+  #page2(style="display:none")
+    .center
+      p.highlight Add webpages you
+      p.highlight want to discourage.
+      table.center.sites2
     input.form-control#newPage(type="text")
-    span.input-group-btn
-      button.btn#addBtn(value="Add") Add'
-
+    button.btn.btn-block#addBtn(value="Add") Add
+    button.btn.btn-primary.btn-block#topage3(value="Add") Done
+  #page3(style="display:none")
+    .title.center Current allowance
+    .balance.center Loading
+    .title.center Watchlist
+    table.center.sites3
   script(src="jquery.js")
   script(src="popup.js")

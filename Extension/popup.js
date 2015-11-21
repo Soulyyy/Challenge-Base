@@ -1,10 +1,11 @@
-var key = 42;
+var key = encodeURIComponent("tmpemail@gmail.com");
 function populate() {
   chrome.runtime.getBackgroundPage(function (bgPage) {
-    $(".sites tr").remove();
+    $(".sites2 tr, .sites3 tr").remove();
     for (var i = 0; i < bgPage.blacklist.length; i++) {
       var url = bgPage.blacklist[i];
-      $(".sites").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'><span class='glyphicon glyphicon-remove'></a></td></tr>");
+      $(".sites2").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'>X</a></td></tr>");
+      $(".sites3").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'><span class='glyphicon glyphicon-remove'></a></td></tr>");
     }
     $(".remove").click(function () {
       remove($(this).data("id"));
@@ -17,10 +18,29 @@ populate();
 $("#addBtn").click(function () {
   add();
 });
-
+chrome.runtime.getBackgroundPage(function (bgPage) {
+  if (bgPage.loggedin) {
+    $("#page3").show();
+  } else {
+    $("#page1").show();
+  }
+});
 $("#newPage").keypress(function (e) {
   if (e.which != 13) return;
   add();
+});
+
+$("#topage2").click(function () {
+  $("#page1").hide();
+  $("#page2").show();
+});
+
+$("#topage3").click(function () {
+  $("#page2").hide();
+  $("#page3").show();
+  chrome.runtime.getBackgroundPage(function (bgPage) {
+    bgPage.loggedin = true;
+  });
 });
 
 function add() {
