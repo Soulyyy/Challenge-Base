@@ -4,7 +4,7 @@ function populate() {
     $(".sites tr").remove();
     for (var i = 0; i < bgPage.blacklist.length; i++) {
       var url = bgPage.blacklist[i];
-      $(".sites").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'>X</a></td></tr>");
+      $(".sites").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'><span class='glyphicon glyphicon-remove'></a></td></tr>");
     }
     $(".remove").click(function () {
       remove($(this).data("id"));

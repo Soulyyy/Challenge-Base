@@ -1,14 +1,16 @@
 doctype html
 head
   meta(charset="UTF-8")
+  link(rel="stylesheet" href="flat-ui.css")
   link(rel="stylesheet" href="popup.css")
 body
-  .title Current balance
-  .balance Loading
-  .title Currently blacklisted sites
-  table.sites
-  .newItem
-    input#newPage(type="text")
-    button#addBtn(value="Add") Add
+  .title.center Current balance
+  .balance.center Loading
+  .title.center Blacklisted sites
+  table.center.sites
+  //.newItem.input-group
+    input.form-control#newPage(type="text")
+    span.input-group-btn
+      button.btn#addBtn(value="Add") Add
   script(src="jquery.js")
   script(src="popup.js")

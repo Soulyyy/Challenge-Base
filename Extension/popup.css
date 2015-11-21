@@ -1,29 +1,32 @@
 body {
-  width: 300px;
-}
+  width: 200px;
+  color: #2C3E50;
+  padding: 20px;
+  overflow: hidden; }
 
 .title {
-  color: black;
   font-weight: bold;
   font-size: 16pt;
   margin-bottom: 10px;
-}
+  color: #34495E; }
 
 .balance {
   padding-left: 10px;
   padding-bottom: 10px;
   font-size: 20pt;
-}
+  color: #16A085; }
 
 .remove {
   font-weight: bold;
   text-decoration: none;
-  color: red;
-  text-align: right;
-}
+  color: #E74C3C;
+  text-align: right; }
 
 .sites {
-  padding-left: 10px;
-}
+  margin: auto;
+  color: #2C3E50; }
+
+.center {
+  text-align: center; }
 
 /*# sourceMappingURL=popup.css.map */
