@@ -105,9 +105,10 @@
 
 /* Landing page content */
 .bg {
-  min-height: 800px;
+  min-height: 100%;
+  height: 100%;
   width: 100%;
-  background: url("/img/landingbackground.jpg") no-repeat center 80%;
+  background: url("/img/landingbackground.jpg") no-repeat center center fixed;
   background-size: cover; }
 
 .action-content {

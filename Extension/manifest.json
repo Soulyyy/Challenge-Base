@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Give money app",
-  "description": "We take your money",
+  "name": "Responsible",
+  "description": "Responsibility is hard to teach. On the internet, we can do it for you.",
   "version": "1.0",
   "browser_action": {
     "default_icon": "logo.png",
@@ -9,6 +9,7 @@
   },
   "background": {
     "scripts": [
+      "jquery.js",
       "background.js"
     ]
   },

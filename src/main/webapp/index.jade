@@ -1,14 +1,12 @@
 include mixins
 extends layout
 block body
-  //.landing-nav
+  .landing-nav
     .container(style="{position:relative}")
       .landing-nav-title.col-xs-6
-        span
-          img.validare-icon(src="/img/validare-icon.svg")
-        b Validare
+        b Responsible
         span.superscript
-          b alpha
+          b hack
       .col-xs-6.landing-nav-btn-group
         .pull-right
           button.btn
@@ -27,7 +25,7 @@ block body
   .intro-title
     .container
   .content-1.scroll-content
-    .container
+    //.container
       .row
         .col-lg-12
           .feature-title
@@ -71,7 +69,7 @@ block body
               p Create an input field. As it’s name, type:
               p ‘service-time-interval-x’ to trigger on Change events of the input field every x milliseconds. For example ‘service-time-interval-1000’ will make the on Change events trigger every second.
               p ‘service-datamaster-change’ to change the value of the field every time a datamaster changes to the datamaster name that was changed and trigger on Change event of the input field itself.
-  footer.lp
+  //footer.lp
     .container
       .col-md-4
         | This is an early alpha project by Waystone.

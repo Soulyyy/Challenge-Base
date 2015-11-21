@@ -4,16 +4,13 @@ function populate() {
     $(".sites tr").remove();
     for (var i = 0; i < bgPage.blacklist.length; i++) {
       var url = bgPage.blacklist[i];
-      $(".sites").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'>X</a></td></tr>");
+      $(".sites").append("<tr><td>" + url + "</td><td><a class='remove' href='#' data-id='" + i + "'><span class='glyphicon glyphicon-remove'></a></td></tr>");
     }
     $(".remove").click(function () {
       remove($(this).data("id"));
     });
   });
-  $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
-    console.log(data);
-    $(".balance").text(data.balance + "€");
-  })
+  updateBalance();
 }
 populate();
 
@@ -43,3 +40,10 @@ function remove(id) {
     populate();
   });
 }
+
+function updateBalance() {
+  $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
+    $(".balance").text(data.balance.toFixed(2) + "€");
+  });
+}
+setInterval(updateBalance, 2000);
