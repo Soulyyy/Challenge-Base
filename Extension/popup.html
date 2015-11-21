@@ -1,5 +1,25 @@
-<!DOCTYPE html><head><meta charset="UTF-8"><link rel="stylesheet" href="flat-ui.css"><link rel="stylesheet" href="popup.css"></head><body><!--.logo.centerspan.highlight
-  b R--><div class="title center">Current balance</div><div class="balance center">Loading</div><div class="title center">Blacklisted sites</div><table class="center sites"></table><!--.newItem.input-groupinput.form-control#newPage(type="text")
-span.input-group-btn
-  button.btn#addBtn(value="Add") Add'
---><script src="jquery.js"></script><script src="popup.js"></script></body>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="flat-ui.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div id="page1" style="display:none">E-Mail<input type="text" class="form-control"><br>
+    <button id="topage2" class="btn">Next</button>
+</div>
+<div id="page2" style="display:none">
+    <table class="center sites2"></table>
+    <input id="newPage" type="text" class="form-control">
+    <button id="addBtn" value="Add" class="btn">Add</button>
+    <button id="topage3" value="Add" class="btn">Done</button>
+</div>
+<div id="page3" style="display:none">
+    <div class="title center">Current balance</div>
+    <div class="balance center">Loading</div>
+    <div class="title center">Blacklisted sites</div>
+    <table class="center sites3"></table>
+</div>
+<script src="jquery.js"></script>
+<script src="popup.js"></script>
+</body>

@@ -22,7 +22,7 @@ body {
   color: #E74C3C;
   text-align: right; }
 
-.sites {
+.sites2, .sites3 {
   margin: auto;
   color: #2C3E50; }
 
@@ -37,5 +37,9 @@ body {
 
 .breaker {
   margin: 0; }
+
+.form-control {
+  height: auto;
+}
 
 /*# sourceMappingURL=popup.css.map */

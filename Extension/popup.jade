@@ -4,17 +4,20 @@ head
   link(rel="stylesheet" href="flat-ui.css")
   link(rel="stylesheet" href="popup.css")
 body
-  //.logo.center
-    span.highlight
-      b R
-  .title.center Current balance
-  .balance.center Loading
-  .title.center Blacklisted sites
-  table.center.sites
-  //.newItem.input-group
+  #page1(style="display:none")
+    | E-Mail
+    input.form-control(type="text")
+    br
+    button#topage2.btn Next
+  #page2(style="display:none")
+    table.center.sites2
     input.form-control#newPage(type="text")
-    span.input-group-btn
-      button.btn#addBtn(value="Add") Add'
-
+    button.btn#addBtn(value="Add") Add
+    button.btn#topage3(value="Add") Done
+  #page3(style="display:none")
+    .title.center Current balance
+    .balance.center Loading
+    .title.center Blacklisted sites
+    table.center.sites3
   script(src="jquery.js")
   script(src="popup.js")

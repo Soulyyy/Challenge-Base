@@ -12,6 +12,8 @@ chrome.storage.sync.get("blacklist", function (ret) {
   }
   blacklist = ret.blacklist;
 });
+var loggedin = false;
+var startBalance;
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (changeInfo.status != "complete") return;
   checkBlacklist();
@@ -54,12 +56,18 @@ function checkBlacklist() {
       var site = blacklist[i];
       if (url.indexOf(site) === -1) continue;
       if (tid) clearInterval(tid);
+      $.getJSON("http://localhost:8080/rest/balance?key=" + key, function (data) {
+        startBalance = data.balance;
+      });
       tid = setInterval(function () {
         updateBalance(site);
       }, 2000);
       console.log("Visiting blacklisted site: " + url);
       visiting = true;
       return;
+    }
+    if (visiting) {
+
     }
     visiting = false;
     if (tid) clearInterval(tid);
